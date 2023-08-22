@@ -13,6 +13,9 @@
 		8712A05C2A9237A7005FCCDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8712A05A2A9237A7005FCCDA /* Main.storyboard */; };
 		8712A05E2A9237A7005FCCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8712A05D2A9237A7005FCCDA /* Assets.xcassets */; };
 		8712A0612A9237A7005FCCDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8712A05F2A9237A7005FCCDA /* LaunchScreen.storyboard */; };
+		87E260112A94BBB400A1D4DE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2600F2A94BBB400A1D4DE /* TableViewCell.swift */; };
+		87E260122A94BBB400A1D4DE /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87E260102A94BBB400A1D4DE /* TableViewCell.xib */; };
+		87E260142A94BC1400A1D4DE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E260132A94BC1400A1D4DE /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		8712A05D2A9237A7005FCCDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8712A0602A9237A7005FCCDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8712A0622A9237A7005FCCDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87E2600F2A94BBB400A1D4DE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		87E260102A94BBB400A1D4DE /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		87E260132A94BC1400A1D4DE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,58 @@
 		8712A0532A9237A7005FCCDA /* Habbit app */ = {
 			isa = PBXGroup;
 			children = (
+				87E2600B2A94BB8700A1D4DE /* View */,
+				87E2600A2A94BB8100A1D4DE /* Model */,
+				87E260092A94BB2700A1D4DE /* Storyboard */,
+				87E260082A94BB1600A1D4DE /* Controllers */,
 				8712A0542A9237A7005FCCDA /* AppDelegate.swift */,
 				8712A0562A9237A7005FCCDA /* SceneDelegate.swift */,
-				8712A0582A9237A7005FCCDA /* ViewController.swift */,
-				8712A05A2A9237A7005FCCDA /* Main.storyboard */,
 				8712A05D2A9237A7005FCCDA /* Assets.xcassets */,
-				8712A05F2A9237A7005FCCDA /* LaunchScreen.storyboard */,
 				8712A0622A9237A7005FCCDA /* Info.plist */,
 			);
 			path = "Habbit app";
+			sourceTree = "<group>";
+		};
+		87E260082A94BB1600A1D4DE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8712A0582A9237A7005FCCDA /* ViewController.swift */,
+				87E260132A94BC1400A1D4DE /* TableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		87E260092A94BB2700A1D4DE /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8712A05A2A9237A7005FCCDA /* Main.storyboard */,
+				8712A05F2A9237A7005FCCDA /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		87E2600A2A94BB8100A1D4DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		87E2600B2A94BB8700A1D4DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87E2600C2A94BB8C00A1D4DE /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		87E2600C2A94BB8C00A1D4DE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				87E2600F2A94BBB400A1D4DE /* TableViewCell.swift */,
+				87E260102A94BBB400A1D4DE /* TableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8712A0612A9237A7005FCCDA /* LaunchScreen.storyboard in Resources */,
+				87E260122A94BBB400A1D4DE /* TableViewCell.xib in Resources */,
 				8712A05E2A9237A7005FCCDA /* Assets.xcassets in Resources */,
 				8712A05C2A9237A7005FCCDA /* Main.storyboard in Resources */,
 			);
@@ -139,7 +189,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8712A0592A9237A7005FCCDA /* ViewController.swift in Sources */,
+				87E260112A94BBB400A1D4DE /* TableViewCell.swift in Sources */,
 				8712A0552A9237A7005FCCDA /* AppDelegate.swift in Sources */,
+				87E260142A94BC1400A1D4DE /* TableViewController.swift in Sources */,
 				8712A0572A9237A7005FCCDA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,18 +342,23 @@
 				DEVELOPMENT_TEAM = 5TA9PLMD6F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Habbit app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MyHabit;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Khalidov.Habbit-app";
+				PRODUCT_BUNDLE_IDENTIFIER = Khalidov.MyHabit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -318,18 +375,23 @@
 				DEVELOPMENT_TEAM = 5TA9PLMD6F;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Habbit app/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = MyHabit;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Khalidov.Habbit-app";
+				PRODUCT_BUNDLE_IDENTIFIER = Khalidov.MyHabit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
