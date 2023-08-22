@@ -9,6 +9,11 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var strickLabel: UILabel!
+    @IBOutlet var checkmarkImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
