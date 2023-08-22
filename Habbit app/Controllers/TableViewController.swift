@@ -8,10 +8,20 @@
 import UIKit
 
 class TableViewController: UITableViewController {
+    
+    let habitStorage: HabitStorage = HabitStorage()
+    var habits: [Habit] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // 1. получение значение типа UINib, соответствующее xib-файлу кастом- ной ячейки
+        let habitCell = UINib(nibName: "TableViewCell", bundle: nil)
+        
+        // 2. регистрация кастомной ячейки в табличном представлении
+        tableView.register(habitCell, forCellReuseIdentifier: "TableViewCell")
+        
+        loadHabit()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,23 +33,36 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return habits.count
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // 1. получение переиспользуемой кастомной ячейки по ее идентификатору
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        // 2. получаем текущий элемент, информация о котором должна быть выведена в строке
+        let currentHabit = habits[indexPath.row]
+        
+        // 3. заполняем ячейку данными
+        cell.strickLabel.text = "\(currentHabit.strick)"
+        cell.titleLabel.text = currentHabit.title
+        cell.timeLabel.text = "Every day in: \(currentHabit.time)"
+        
+        switch currentHabit.status{
+        case .completed:
+            cell.checkmarkImage.image = UIImage(systemName: "checkmark.circle.fill")
+        default:
+            cell.checkmarkImage.image = UIImage(systemName: "checkmark.circle")
+        }
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,4 +109,13 @@ class TableViewController: UITableViewController {
     }
     */
 
+}
+
+extension TableViewController{
+    
+    func loadHabit(){
+        habitStorage.loadHabit().forEach { habit in
+            habits.append(habit)
+        }
+    }
 }
