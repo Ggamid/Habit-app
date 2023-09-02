@@ -13,10 +13,13 @@ class TableViewCell: UITableViewCell {
     @IBOutlet var timeLabel: UILabel!
     @IBOutlet var strickLabel: UILabel!
     @IBOutlet var checkmarkImage: UIImageView!
+    @IBOutlet var subView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        let radius: CGFloat = 10
+        subView.layer.cornerRadius = radius
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
