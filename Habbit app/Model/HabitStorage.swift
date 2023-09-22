@@ -21,7 +21,10 @@ class HabitStorage: HabitStorageProtocol{
             Habit(title: "Drink water", time: "20:00", strick: 0, status: .notCompleted),
             Habit(title: "Sport", time: "15:00", strick: 0, status: .notCompleted),
             Habit(title: "Book", time: "13:00", strick: 0, status: .notCompleted),
-            Habit(title: "Long named Habit for test Habit for test", time: "13:00", strick: 0, status: .notCompleted)
+            Habit(title: "Long named Habit for test Habit for test", time: "13:00", strick: 0, status: .notCompleted),
+            Habit(title: "named Habit ", time: "13:00", strick: 0, status: .notCompleted),
+            Habit(title: "for test", time: "13:00", strick: 0, status: .notCompleted),
+            Habit(title: "Long named Habit ", time: "13:00", strick: 0, status: .notCompleted)
         ]
         return habits
     }

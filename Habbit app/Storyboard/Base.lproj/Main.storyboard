@@ -21,11 +21,111 @@
                             <outlet property="delegate" destination="iSY-FV-P9e" id="YxP-WK-Xpx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Habits" id="NXB-R3-xeA"/>
+                    <navigationItem key="navigationItem" title="Habits" largeTitleDisplayMode="always" id="NXB-R3-xeA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vak-13-zmh">
+                            <color key="tintColor" systemColor="systemPurpleColor"/>
+                            <connections>
+                                <segue destination="Bro-pL-aZp" kind="show" identifier="toEditScreen" id="3Ww-VG-xFe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5om-ro-KSi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156.4885496183206" y="-244.36619718309859"/>
+        </scene>
+        <!--Edit-->
+        <scene sceneID="hlU-Lj-OyV">
+            <objects>
+                <tableViewController id="Bro-pL-aZp" customClass="EditController" customModule="Habbit_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="WK9-fV-Cjf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" systemColor="systemGray4Color"/>
+                        <sections>
+                            <tableViewSection id="fpa-1Z-tbg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="56" id="Yjx-8E-KN2">
+                                        <rect key="frame" x="0.0" y="18" width="393" height="56"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Yjx-8E-KN2" id="xvm-BE-cwV">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="title of Habit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Ez-ld-mPY">
+                                                    <rect key="frame" x="25" y="16.333333333333336" width="343" height="23.333333333333336"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1Ez-ld-mPY" secondAttribute="trailing" constant="5" id="BT4-GX-bpM"/>
+                                                <constraint firstItem="1Ez-ld-mPY" firstAttribute="leading" secondItem="xvm-BE-cwV" secondAttribute="leadingMargin" constant="5" id="EJn-iQ-eXC"/>
+                                                <constraint firstItem="1Ez-ld-mPY" firstAttribute="centerY" secondItem="xvm-BE-cwV" secondAttribute="centerY" id="pIc-zB-zYc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="74" id="HHN-yD-1eh">
+                                        <rect key="frame" x="0.0" y="74" width="393" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HHN-yD-1eh" id="8Ww-bz-KFS">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every day in: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsj-Cx-OhW">
+                                                    <rect key="frame" x="25" y="25.666666666666671" width="112" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="pon-U0-PHY">
+                                                    <rect key="frame" x="276" y="13" width="112" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="112" id="5t7-Rx-QfY"/>
+                                                        <constraint firstAttribute="height" constant="48" id="jWs-Bl-yQE"/>
+                                                    </constraints>
+                                                    <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                                        <!--2037-12-31 11:00:00 +0000-->
+                                                    </date>
+                                                </datePicker>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="pon-U0-PHY" firstAttribute="centerY" secondItem="8Ww-bz-KFS" secondAttribute="centerY" id="3NM-Y4-P79"/>
+                                                <constraint firstAttribute="trailing" secondItem="pon-U0-PHY" secondAttribute="trailing" constant="5" id="M4a-2H-FQd"/>
+                                                <constraint firstItem="Lsj-Cx-OhW" firstAttribute="leading" secondItem="8Ww-bz-KFS" secondAttribute="leadingMargin" constant="5" id="MHQ-Ea-obv"/>
+                                                <constraint firstItem="Lsj-Cx-OhW" firstAttribute="centerY" secondItem="8Ww-bz-KFS" secondAttribute="centerY" id="cWC-6s-oDu"/>
+                                                <constraint firstItem="pon-U0-PHY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Lsj-Cx-OhW" secondAttribute="trailing" constant="5" id="npE-2x-hRX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Bro-pL-aZp" id="MHk-iF-u3O"/>
+                            <outlet property="delegate" destination="Bro-pL-aZp" id="0Qv-lB-7Da"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Edit" largeTitleDisplayMode="never" id="yaY-Q0-b3o">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="9SD-vj-D7m">
+                            <connections>
+                                <action selector="cancelBtn" destination="Bro-pL-aZp" id="jXw-we-mwE"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Gn3-3Z-CTn"/>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="saveButton" destination="Gn3-3Z-CTn" id="1q4-8r-Vv6"/>
+                        <outlet property="timePicker" destination="pon-U0-PHY" id="KF0-F3-wyH"/>
+                        <outlet property="titleLabel" destination="1Ez-ld-mPY" id="PN1-yK-oCM"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JZO-wq-PP0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1983.9694656488548" y="-244.36619718309859"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wRT-E4-tj5">
@@ -49,6 +149,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

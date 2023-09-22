@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		8712A0552A9237A7005FCCDA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8712A0542A9237A7005FCCDA /* AppDelegate.swift */; };
 		8712A0572A9237A7005FCCDA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8712A0562A9237A7005FCCDA /* SceneDelegate.swift */; };
-		8712A0592A9237A7005FCCDA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8712A0582A9237A7005FCCDA /* ViewController.swift */; };
 		8712A05C2A9237A7005FCCDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8712A05A2A9237A7005FCCDA /* Main.storyboard */; };
 		8712A05E2A9237A7005FCCDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8712A05D2A9237A7005FCCDA /* Assets.xcassets */; };
 		8712A0612A9237A7005FCCDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8712A05F2A9237A7005FCCDA /* LaunchScreen.storyboard */; };
+		8769B9B92AA5F28700852865 /* EditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8769B9B82AA5F28700852865 /* EditController.swift */; };
 		87E260112A94BBB400A1D4DE /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E2600F2A94BBB400A1D4DE /* TableViewCell.swift */; };
 		87E260122A94BBB400A1D4DE /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87E260102A94BBB400A1D4DE /* TableViewCell.xib */; };
 		87E260142A94BC1400A1D4DE /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E260132A94BC1400A1D4DE /* TableViewController.swift */; };
@@ -24,11 +24,11 @@
 		8712A0512A9237A7005FCCDA /* Habbit app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habbit app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8712A0542A9237A7005FCCDA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8712A0562A9237A7005FCCDA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8712A0582A9237A7005FCCDA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8712A05B2A9237A7005FCCDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8712A05D2A9237A7005FCCDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8712A0602A9237A7005FCCDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8712A0622A9237A7005FCCDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8769B9B82AA5F28700852865 /* EditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditController.swift; sourceTree = "<group>"; };
 		87E2600F2A94BBB400A1D4DE /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		87E260102A94BBB400A1D4DE /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		87E260132A94BC1400A1D4DE /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 		87E260082A94BB1600A1D4DE /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8712A0582A9237A7005FCCDA /* ViewController.swift */,
+				8769B9B82AA5F28700852865 /* EditController.swift */,
 				87E260132A94BC1400A1D4DE /* TableViewController.swift */,
 			);
 			path = Controllers;
@@ -195,7 +195,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87E260162A94CA0500A1D4DE /* Habit.swift in Sources */,
-				8712A0592A9237A7005FCCDA /* ViewController.swift in Sources */,
+				8769B9B92AA5F28700852865 /* EditController.swift in Sources */,
 				87E260112A94BBB400A1D4DE /* TableViewCell.swift in Sources */,
 				8712A0552A9237A7005FCCDA /* AppDelegate.swift in Sources */,
 				87E260182A94D3CC00A1D4DE /* HabitStorage.swift in Sources */,
