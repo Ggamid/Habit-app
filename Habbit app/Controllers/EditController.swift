@@ -13,6 +13,7 @@ class EditController: UITableViewController {
     @IBOutlet var timePicker: UIDatePicker!
     @IBOutlet var saveButton: UIBarButtonItem!
 
+    var doAfterEdit: ((String, Date) -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -96,6 +97,13 @@ class EditController: UITableViewController {
 extension EditController{
     
     @IBAction func cancelBtn(){
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveChanges(){
+        let title = titleLabel.text!
+        let time = timePicker.date
+        doAfterEdit?(title, time)
         navigationController?.popViewController(animated: true)
     }
 }

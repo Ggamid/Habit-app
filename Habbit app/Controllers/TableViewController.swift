@@ -120,4 +120,19 @@ extension TableViewController{
             habits.append(habit)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toEditScreen"{
+            let destination = segue.destination as! EditController
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "HH:mm"
+            
+            destination.doAfterEdit = { [unowned self] title, date in
+                let newHabit = Habit(title: title, time: dateFormatter.string(from: date), strick: 0, status: .notCompleted)
+                habits.append(newHabit)
+                tableView.reloadData()
+            }
+        }
+    }
 }

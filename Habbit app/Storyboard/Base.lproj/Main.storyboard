@@ -114,7 +114,11 @@
                                 <action selector="cancelBtn" destination="Bro-pL-aZp" id="jXw-we-mwE"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Gn3-3Z-CTn"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="save" id="Gn3-3Z-CTn">
+                            <connections>
+                                <action selector="saveChanges" destination="Bro-pL-aZp" id="NvK-66-DKv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
