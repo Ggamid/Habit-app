@@ -11,6 +11,11 @@ class TableViewController: UITableViewController {
     
     let habitStorage: HabitStorage = HabitStorage()
     var habits: [Habit] = []
+    
+    let colors = [UIColor.systemPink, UIColor.cyan, UIColor.red, UIColor.purple, UIColor.systemOrange, #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1),
+                    ]
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,9 +55,16 @@ class TableViewController: UITableViewController {
         // 2. получаем текущий элемент, информация о котором должна быть выведена в строке
         let currentHabit = habits[indexPath.row]
         
+        let forColorNum: Int = indexPath.row % colors.count
+        
+        let colorForCurCell = colors[forColorNum]
+        
         // 3. заполняем ячейку данными
         cell.strickLabel.text = "\(currentHabit.strick)"
+        
         cell.titleLabel.text = currentHabit.title
+        cell.titleLabel.textColor = colorForCurCell
+        
         cell.timeLabel.text = "Every day in: \(currentHabit.time)"
         
         switch currentHabit.status{
@@ -61,9 +73,32 @@ class TableViewController: UITableViewController {
         default:
             cell.checkmarkImage.image = UIImage(systemName: "checkmark.circle")
         }
+        cell.checkmarkImage.tintColor = colorForCurCell
+        
 
         return cell
     }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard type(of: habits[indexPath.row]) == Habit.self else {return}
+        
+        let curHabit = habits[indexPath.row]
+        
+        switch curHabit.status{
+        case .completed:
+            habits[indexPath.row].status = .notCompleted
+            habits[indexPath.row].strick -= 1
+        case .notCompleted:
+            habits[indexPath.row].status = .completed
+            habits[indexPath.row].strick += 1
+        }
+        
+        tableView.reloadSections(IndexSet(arrayLiteral: indexPath.section), with: .automatic)
+    }
+    
+    
 
 
     /*
