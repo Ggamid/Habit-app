@@ -10,7 +10,11 @@ import UIKit
 class TableViewController: UITableViewController {
     
     let habitStorage: HabitStorage = HabitStorage()
-    var habits: [Habit] = []
+    var habits: [Habit] = []{
+        didSet{
+            habitStorage.saveHabit(habits)
+        }
+    }
     
     let colors = [UIColor.systemPink, UIColor.cyan, UIColor.red, UIColor.purple, UIColor.systemOrange, #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1),
                     ]
@@ -48,7 +52,7 @@ class TableViewController: UITableViewController {
         return habits.count
     }
 
-
+    // MARK: CellForRowAt
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // 1. получение переиспользуемой кастомной ячейки по ее идентификатору
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
@@ -79,7 +83,7 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-    
+    // MARK: didSelectRowAt (change state of habit)
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard type(of: habits[indexPath.row]) == Habit.self else {return}
@@ -149,13 +153,14 @@ class TableViewController: UITableViewController {
 }
 
 extension TableViewController{
-    
+    // MARK: laodHabit
     func loadHabit(){
         habitStorage.loadHabit().forEach { habit in
-            habits.append(habit)
+            habits.append(habit as! Habit)
         }
     }
     
+    // MARK: Segue to EditScreen
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEditScreen"{
             let destination = segue.destination as! EditController
